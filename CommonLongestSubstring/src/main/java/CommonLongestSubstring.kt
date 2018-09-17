@@ -1,11 +1,4 @@
-import kotlinx.coroutines.experimental.launch
 import kotlin.system.measureTimeMillis
-
-val max = { a: Int, b: Int ->
-    maxOf(a, b)
-}
-
-val altMax: (a: Int, b: Int) -> Int = Math::max
 
 fun lcs(a: String, b: String): String {
 
