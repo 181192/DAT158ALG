@@ -1,5 +1,9 @@
 import java.util.*
 
+@DslMarker
+annotation class KnapsackDsl
+
+@KnapsackDsl
 class ItemBuilder {
     var name = ""
     var value = 0
@@ -8,6 +12,7 @@ class ItemBuilder {
     fun build(): Item = Item(name, value, weight)
 }
 
+@KnapsackDsl
 class KnapsackBuilder {
     var capacity = 0
     private val items = mutableListOf<Item>()
