@@ -1,6 +1,6 @@
 # DAT158ALG
 
-## An overview of the algorithms in the cource
+## An overview of the algorithms in the course
 
 | Algorithm                         | Type                | O-Notation                                                                                                                                                 | Assigment | Oblig |
 | --------------------------------- | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ----- |
