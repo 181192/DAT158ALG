@@ -10,7 +10,7 @@
 | Huffman                           | Text processing     | <img src="https://latex.codecogs.com/gif.latex?O%28n&plus;d%5C%3A%20log%28d%29%29%2C%5C%3A%20d%20%3D%20char%5C%3A%20in%5C%3A%20three">                     | 1         | 1     |
 | Vertex Cover                      | NP-Complete         |                                                                                                                                                            | 2         |
 | Travelling Sales Person           |
-| Set Cover Problem                 |                     | 2                                                                                                                                                          |
+| Set Cover Problem                 |                     |                                                                                                                                                            | 2         |
 | Linear Programming                |
 | Integer Programming               | (ILP) NP-Hard       |                                                                                                                                                            | 3         |
 | Deterministic Rounding Algorithm  | Solve LP-Relaxation |                                                                                                                                                            | 2         |
@@ -26,9 +26,9 @@
 | First Fit                         |
 | Linear Grouping                   |
 | Max Sat / Max Cut                 |
-| Greedy Algorithm                  |                     | 2                                                                                                                                                          |
-| Nearest Addition Algorithm        |                     | 2                                                                                                                                                          |
-| Triangle In-Equal                 |                     | 2                                                                                                                                                          |
-| Dynamic Programming               |                     | 3                                                                                                                                                          | 3         |
-| Shortest Remaining Prog Time      |                     | 3                                                                                                                                                          | 3         |
-| First Fit Decreasing              |                     | 3                                                                                                                                                          |
+| Greedy Algorithm                  |                     |                                                                                                                                                            | 2         |
+| Nearest Addition Algorithm        |                     |                                                                                                                                                            | 2         |
+| Triangle In-Equal                 |                     |                                                                                                                                                            | 2         |
+| Dynamic Programming               |                     |                                                                                                                                                            | 3         | 3     |
+| Shortest Remaining Prog Time      |                     |                                                                                                                                                            | 3         | 3     |
+| First Fit Decreasing              |                     |                                                                                                                                                            | 3         |
