@@ -1,42 +1,20 @@
-import java.util.*
-
 @DslMarker
 annotation class KnapsackDsl
 
 @KnapsackDsl
-class ItemBuilder {
-    var name = ""
-    var value = 0
-    var weight = 0
-
-    fun build(): Item = Item(name, value, weight)
-}
-
-@KnapsackDsl
 class KnapsackBuilder {
     var capacity = 0
-    private val items = mutableListOf<Item>()
-
-    fun item(block: ItemBuilder.() -> Unit) = items.add(ItemBuilder().apply(block).build())
+    var items = mutableListOf<Item>()
 
     fun build(): Knapsack = Knapsack(items, capacity)
 }
 
-class Solution(private val items: List<Item>, private val value: Int) {
-    fun display() {
-        if (items.isNotEmpty()) {
-            println("Knapsack solution")
-            System.out.println("Values: $value")
-            println("Items :")
-            items.forEach(::print)
-            println()
-        }
-    }
+fun knapsack(block: KnapsackBuilder.() -> Unit): Knapsack = KnapsackBuilder().apply(block).build()
 
-}
+data class Item(val name: String, val value: Int, val weight: Int)
 
 class Knapsack(private val items: List<Item>, private val capacity: Int) {
-    fun solve(): Solution {
+    fun solve() {
         val len = items.size
         val matrix = Array(len + 1) { IntArray(capacity + 1) }
 
@@ -66,55 +44,23 @@ class Knapsack(private val items: List<Item>, private val capacity: Int) {
             }
             i--
         }
-
-        return Solution(itemsSolution, matrix[len][capacity])
-    }
-
-    fun display() {
-        if (items.isNotEmpty()) {
-            println("Knapsack problem")
-            System.out.println("Capacity : $capacity")
-            println("Items :")
-            items.forEach(::print)
-            println()
-        }
+        itemsSolution.forEach(::println)
     }
 }
 
-data class Item(val name: String, val value: Int, val weight: Int)
-
-fun knapsack(block: KnapsackBuilder.() -> Unit): Knapsack = KnapsackBuilder().apply(block).build()
-
 fun main(args: Array<String>) {
+    val items = ArrayList<Item>()
+    items.add(Item("No1", 3, 5))
+    items.add(Item("No2", 2, 3))
+    items.add(Item("No3", 2, 2))
+    items.add(Item("No4", 4, 5))
+    items.add(Item("No5", 3, 4))
+    items.add(Item("No6", 1, 2))
+
     val knapsack = knapsack {
-        item {
-            name = "No1"
-            value = 4
-            weight = 12
-        }
-        item {
-            name = "No2"
-            value = 2
-            weight = 1
-        }
-        item {
-            name = "No3"
-            value = 2
-            weight = 2
-        }
-        item {
-            name = "No4"
-            value = 1
-            weight = 1
-        }
-        item {
-            name = "No5"
-            value = 10
-            weight = 4
-        }
-        capacity = 5
+        this.items = items
+        this.capacity = 6
     }
 
-    knapsack.display()
-    knapsack.solve().display()
+    knapsack.solve()
 }
